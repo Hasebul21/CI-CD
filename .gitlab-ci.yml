@@ -1,0 +1,21 @@
+stages:
+  - build
+  - test
+
+build_website:
+  image: node:22-alpine
+  stage: build
+  script:
+    - node --version
+    - npm --version
+    - npm install
+    - npm run build
+
+test_website:
+  image: node:22-alpine
+  stage: test
+  script:
+    - node --version
+    - npm --version
+    - npm install
+    - npm run test
