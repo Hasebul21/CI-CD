@@ -15,8 +15,8 @@ test_website:
   image: node:22-alpine
   stage: test
   script:
-    - RUN apt update && apt install -y chromium
-    - node --version
-    - npm --version
+    - apk update
+    - apk add --no-cache chromium
+    - chromium-browser --version
     - npm install
     - npm run test
