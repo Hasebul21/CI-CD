@@ -1,13 +1,30 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Hello Hasebul';
+  title = 'Simple Calculator';
 
+  currentInput = '';
+  result = '';
+
+  append(value: string) {
+    this.currentInput += value;
+  }
+
+  clear() {
+    this.currentInput = '';
+    this.result = '';
+  }
+
+  calculate() {
+    try {
+      this.result = eval(this.currentInput);
+    } catch (e) {
+      this.result = String(e);
+    }
+  }
 }
