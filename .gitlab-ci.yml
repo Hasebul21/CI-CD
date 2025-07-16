@@ -15,5 +15,7 @@ test_website:
   image: node:22-alpine
   stage: test
   script:
+    - apk add chromium
+    - apk version chromium
     - npm ci
     - npm run test
