@@ -15,5 +15,8 @@ test_website:
   image: node:22-alpine3.18
   stage: test
   script:
+    - apk add chromium
+    - apk version chromium
+    - export CHROME_BIN=chromium-browser
     - npm ci
     - npm run test
