@@ -12,7 +12,7 @@ build_website:
     - npm run build
 
 test_website:
-  image: alpine:latest
+  image: node:22-alpine
   stage: test
   script:
     - npm ci
