@@ -12,11 +12,13 @@ build_website:
     - npm run build
 
 test_website:
-  image: node:22-alpine
+  image: alpine:latest
   stage: test
   script:
-    - apk update
-    - apk add --no-cache chromium
-    - chromium-browser --version
+    - node --version
+    - npm --version
+    - apk add --no-cache nodejs npm
+    - node --version
+    - npm --version
     - npm install
     - npm run test
