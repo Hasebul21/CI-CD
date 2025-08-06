@@ -24,7 +24,7 @@ export class AppComponent {
 
   calculate() {
     try {
-      this.result = eval(this.currentInput);
+      this.result = this.currentInput;
     } catch (e) {
       this.result = String(e);
     }
