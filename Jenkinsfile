@@ -20,7 +20,7 @@ pipeline {
                 sh 'npm run test'
             }
         }
-        stage('Stage') {
+        stage('Lint') {
             steps {
                 echo 'Linting...'
                 sh 'npm run lint'
