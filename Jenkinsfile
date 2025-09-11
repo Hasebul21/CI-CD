@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     tools {
-        nodejs "NODE24"   // the NodeJS installation name from Global Tool Configuration
+        nodejs "NODE24"   
     }
 
     stages {
