@@ -1,23 +1,35 @@
 pipeline {
     agent any
 
-    stages {
+     tools {
+        nodejs "NODE24"   // the name you configured in Jenkins
+    }
+
+    // stages {
+    //     stage('Checkout') {
+    //         steps {
+    //             git branch: 'main', url: 'https://github.com/Hasebul21/CI-CD'
+    //         }
+    //     }
+
         stage('Build') {
             steps {
                 echo 'Building...'
-                // Add build steps here
+                    sh 'npm install'
+                    sh 'npm run build'
             }
         }
+
         stage('Test') {
             steps {
                 echo 'Testing...'
-                // Add test steps here
+                // sh 'npm test'
             }
         }
+
         stage('Deploy') {
             steps {
                 echo 'Deploying...'
-                // Add deploy steps here
             }
         }
     }
