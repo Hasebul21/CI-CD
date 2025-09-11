@@ -1,35 +1,29 @@
 pipeline {
     agent any
 
-     tools {
-        nodejs "NODE24"   // the name you configured in Jenkins
+    tools {
+        nodejs "NODE24"   // the NodeJS installation name from Global Tool Configuration
     }
 
-    // stages {
-    //     stage('Checkout') {
-    //         steps {
-    //             git branch: 'main', url: 'https://github.com/Hasebul21/CI-CD'
-    //         }
-    //     }
-
+    stages {
         stage('Build') {
             steps {
                 echo 'Building...'
-                    sh 'npm install'
-                    sh 'npm run build'
+                sh 'npm install'
+                sh 'npm run build'
             }
         }
 
         stage('Test') {
             steps {
                 echo 'Testing...'
-                // sh 'npm test'
+                sh 'npm test'
             }
         }
 
         stage('Deploy') {
             steps {
-                echo 'Deploying...'
+                echo 'Hasebul Deploying...'
             }
         }
     }
