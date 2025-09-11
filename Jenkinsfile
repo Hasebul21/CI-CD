@@ -20,7 +20,12 @@ pipeline {
                 sh 'npm test'
             }
         }
-
+         stage('Stage') {
+            steps {
+                echo 'Staging...'
+                sh 'npm lint'
+            }
+        }
         stage('Deploy') {
             steps {
                 echo ' Hasebul Deploying...'
