@@ -26,7 +26,7 @@ describe('AppComponent (Calculator)', () => {
   it('should append numbers to currentInput', () => {
     component.append('5');
     component.append('3');
-    expect(component.currentInput).toBe('54');
+    expect(component.currentInput).toBe('53');
   });
 
   it('should clear currentInput and result', () => {
